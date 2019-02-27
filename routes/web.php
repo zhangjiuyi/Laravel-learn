@@ -19,6 +19,11 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Auth::routes();
+// // 文章列表页
+// Route::get('/posts', '\App\Http\Controllers\PostController@index');
 
-Route::get('/home', 'HomeController@index')->name('home');
+// // 文章详情页
+// Route::get('./posts{post}', '\App\Http\Controllers\PostController@show');
+
+// // 创建文章
+// Route::get('./posts', '\App\Http\Controllers\PostController@indecx');

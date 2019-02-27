@@ -14,23 +14,22 @@ use Illuminate\Http\Request;
 */
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return 1212;
     return $request->user();
 });
 
 
-// 登录接口
-Route::get('test', function() {
-    // If the Content-Type and Accept headers are set to 'application/json',
-    // this will return a JSON structure. This will be cleaned up later.
-    return 2;
-    // return Article::all();
-});
+// // 登录接口
+// Route::get('test', function() {
+//     // If the Content-Type and Accept headers are set to 'application/json',
+//     // this will return a JSON structure. This will be cleaned up later.
+//     return 2;
+//     // return Article::all();
+// });
 
-// 登录接口
-Route::post('login', function() {
-    // If the Content-Type and Accept headers are set to 'application/json',
-    // this will return a JSON structure. This will be cleaned up later.
-    return 2;
-    // return Article::all();
-});
+// // 登录接口
+// Route::post('login', function() {
+//     // If the Content-Type and Accept headers are set to 'application/json',
+//     // this will return a JSON structure. This will be cleaned up later.
+//     return 2;
+//     // return Article::all();
+// });
