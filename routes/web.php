@@ -11,19 +11,27 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
 
-// // 文章列表页
-// Route::get('/posts', '\App\Http\Controllers\PostController@index');
+// 文章列表页
+Route::get('/posts', '\App\Http\Controllers\PostController@index');
 
-// // 文章详情页
-// Route::get('./posts{post}', '\App\Http\Controllers\PostController@show');
+// 创建文章
+Route::get('/posts/create', '\App\Http\Controllers\PostController@create');
+Route::post('/posts', '\App\Http\Controllers\PostController@store');
 
-// // 创建文章
-// Route::get('./posts', '\App\Http\Controllers\PostController@indecx');
+// 文章详情页
+Route::get('/posts/{post}', '\App\Http\Controllers\PostController@show');
+
+// // 编辑文章
+Route::get('/posts/{post}/edit', '\App\Http\Controllers\PostController@edit');
+Route::put('/posts/{post}', '\App\Http\Controllers\PostController@update');
+
+// 删除文章
+Route::get('/posts/delete', '\App\Http\Controllers\PostController@delete');
