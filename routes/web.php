@@ -11,9 +11,12 @@
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+// 组件路由写在这里
+
+
+Route::get('/', function () {
+    return view('welcome');
+});
 
 // Auth::routes();
 
