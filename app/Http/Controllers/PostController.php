@@ -1,5 +1,9 @@
 <?php
+/**
+ * 创建 post 控制器
+ */
 
+ 
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
