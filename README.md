@@ -19,3 +19,19 @@ php laravel57
 * 创建一个migration `php artisan make:migration [mame]` 
 * 执行数据库迁移 `php artisan migrate`
 * 创建模型 `php artisan make:model` 
+* tinker 
+
+```
+// tinker 标准的创建文章的脚本
+>>> $post = new \App\Post();
+=> App\Post {#2914}
+>>> $post ->title = "this is post1";
+=> "this is post1"
+>>> $post->content = "this is post1 content";
+=> "this is post1 content"
+>>> $post->save();
+=> true
+```
+
+
+
