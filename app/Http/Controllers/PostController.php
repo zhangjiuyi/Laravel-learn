@@ -3,27 +3,20 @@
  * 创建 post 控制器
  */
 
- 
+
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
+use \App\Post;
 
 class PostController extends Controller
 {
     // 文章列表操作
     public function index() {
 
-        $posts = [
-            [
-                "title" => "this is title1",
-            ],
-            [
-                "title" => "this is title2",
-            ],
-            [
-                "title" => "this is title3",
-            ]
-        ];
+        // 查找模型
+        $posts = Post::orderBy('created_at', 'desc')->get();
 
         return view("post/index", compact('posts'));
     }
