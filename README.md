@@ -22,16 +22,79 @@ php laravel57
 * tinker 
 
 ```
-// tinker 标准的创建文章的脚本
+// tinker 基本的增删改查 example
+* php artisan tinker
+* 
+Psy Shell v0.9.9 (PHP 7.2.9 — cli) by Justin Hileman
 >>> $post = new \App\Post();
 => App\Post {#2914}
->>> $post ->title = "this is post1";
-=> "this is post1"
->>> $post->content = "this is post1 content";
-=> "this is post1 content"
->>> $post->save();
+>>> $post->content = "this is post3 content";
+=> "this is post3 content"
+>>> $post ->title = "this is post3";
+=> "this is post3"
+>>> $post->save()
 => true
+>>>
+>>>
+>>> \App\Post::find(2)
+=> App\Post {#2922
+     id: 2,
+     title: "this is post1=2",
+     content: "this is post2 content",
+     user_id: 0,
+     created_at: "2019-03-18 16:07:43",
+     updated_at: "2019-03-18 16:07:43",
+   }
+>>> \App\Post::where('title', 'this is post1')->first();
+=> App\Post {#2920
+     id: 1,
+     title: "this is post1",
+     content: "this is post1 content",
+     user_id: 0,
+     created_at: "2019-03-18 16:02:28",
+     updated_at: "2019-03-18 16:02:28",
+   }
+>>> \App\Post::where('title', 'this is post1')->get();
+=> Illuminate\Database\Eloquent\Collection {#2916
+     all: [
+       App\Post {#2922
+         id: 1,
+         title: "this is post1",
+         content: "this is post1 content",
+         user_id: 0,
+         created_at: "2019-03-18 16:02:28",
+         updated_at: "2019-03-18 16:02:28",
+       },
+     ],
+   }
+>>> $post = \App\Post::find(2);
+=> App\Post {#2918
+     id: 2,
+     title: "this is post1=2",
+     content: "this is post2 content",
+     user_id: 0,
+     created_at: "2019-03-18 16:07:43",
+     updated_at: "2019-03-18 16:07:43",
+   }
+>>> $post ->title='this is post2'
+=> "this is post2"
+>>> $post->save()
+=> true
+>>> $post = \App\Post::find(2);
+=> App\Post {#2914
+     id: 2,
+     title: "this is post2",
+     content: "this is post2 content",
+     user_id: 0,
+     created_at: "2019-03-18 16:07:43",
+     updated_at: "2019-03-19 00:13:16",
+   }
+>>> $post->delete()
+=> true
+>>>
 ```
+
+
 
 
 
