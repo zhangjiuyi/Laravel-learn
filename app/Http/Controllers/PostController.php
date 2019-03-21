@@ -16,14 +16,14 @@ class PostController extends Controller
     public function index() {
  
         // 查找模型
-        $posts = Post::orderBy('created_at', 'desc')->paginate(6); // 数据分页
+        $posts = Post::orderBy('created_at', 'desc')->paginate(4); // 数据分页
 
         return view("post/index", compact('posts'));
     }
 
     // 详情页
-    public function show() {
-        return view("post/show", ['title'=> 'this is title', 'isShow' => false]);
+    public function show(Post $post) {
+        return view("post/show", compact('post'));
     }
 
     // 创建文章页面
