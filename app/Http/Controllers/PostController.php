@@ -14,9 +14,9 @@ class PostController extends Controller
 {
     // 文章列表操作
     public function index() {
-
+ 
         // 查找模型
-        $posts = Post::orderBy('created_at', 'desc')->get();
+        $posts = Post::orderBy('created_at', 'desc')->paginate(6); // 数据分页
 
         return view("post/index", compact('posts'));
     }
