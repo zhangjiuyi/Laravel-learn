@@ -34,7 +34,22 @@ class PostController extends Controller
 
     //创建逻辑
     public function store() {
-    
+
+        // v1 
+        // $post = new Post();
+        // $post -> title = request('title');
+        // $post -> content = request('content');
+        // $post -> save();
+
+        // v2
+        // $params = ['title' => request('title'), 'content'=> request('content')];
+
+        // v3
+        $params = request(['title', 'content']);
+        
+        $post = Post::create($params);
+
+        dd($post);  //dd 是laravel自带调试方法 
     }
 
     //编辑页面

@@ -96,5 +96,6 @@ Psy Shell v0.9.9 (PHP 7.2.9 — cli) by Justin Hileman
 
 
 
+### 调试
 
-
+laravel 自带了 dd 打印方法
