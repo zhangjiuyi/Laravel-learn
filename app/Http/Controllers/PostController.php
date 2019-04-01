@@ -46,10 +46,11 @@ class PostController extends Controller
 
         // v3
         $params = request(['title', 'content']);
-        
         $post = Post::create($params);
 
-        dd($post);  //dd 是laravel自带调试方法 
+        return redirect("/posts");
+
+        // dd($post);  //dd 是laravel自带调试方法 
     }
 
     //编辑页面
