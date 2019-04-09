@@ -32,7 +32,14 @@ class PostController extends Controller
     }    
 
 
-    //创建逻辑
+    /**
+     * 创建逻辑
+     * 
+     * 表单三步骤
+     * 1. 验证
+     * 2. 逻辑
+     * 3. 渲染
+     */
     public function store() {
 
         // 验证
@@ -40,7 +47,7 @@ class PostController extends Controller
             'title' => 'required|string|max:100|min:5',
             'content' => 'required|string|min:10',
         ], [
-            
+
         ]);  
 
         // v1 
@@ -53,9 +60,12 @@ class PostController extends Controller
         // $params = ['title' => request('title'), 'content'=> request('content')];
 
         // v3
+        // l逻辑
         $params = request(['title', 'content']);
         $post = Post::create($params);
 
+
+        // 渲染
         return redirect("/posts");
 
         // dd($post);  //dd 是laravel自带调试方法 

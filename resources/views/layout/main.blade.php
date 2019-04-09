@@ -16,7 +16,7 @@
 
     <!-- Custom styles for this template -->
     <link href="/css/blog.css" rel="stylesheet">
-    <!-- <link rel="stylesheet" type="text/css" href="/css/wangEditor.min.css"> -->
+    <link rel="stylesheet" type="text/css" href="/css/wangEditor.min.css">
 
 </head>
 
@@ -43,7 +43,7 @@
     
     <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!-- <script type="text/javascript" src="/js/wangEditor.min.js"></script> -->
+    <script type="text/javascript" src="/js/wangEditor.min.js"></script>
     <script src="/js/ylaravel.js"></script>
 
 </body>

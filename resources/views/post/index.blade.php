@@ -32,7 +32,7 @@
                     <span class="glyphicon glyphicon-chevron-left"></span></a>
                 <a class="right carousel-control" href="#carousel-example" data-slide="next">
                     <span class="glyphicon glyphicon-chevron-right"></span></a>
-            </div>
+            </div> 
         </div>
         <div style="height: 20px;">
         </div>
@@ -43,7 +43,8 @@
                 <h2 class="blog-post-title"><a href="/posts/{{$post->id}}">{{$post->title}}</a></h2>
                 <p class="blog-post-meta">{{$post->created_at->toFormattedDateString()}} <a href="/user/5">sssd</a></p>
 
-                <p> {{$post->content}}
+                <!-- {!!   !!} 禁止渲染 html 标签  -->
+                <p> {!! str_limit($post->content,100,'...') !!}     </p>  
                 <p class="blog-post-meta">赞 0 | 评论 0</p>
             </div>
 
